@@ -1,0 +1,21 @@
+{
+  "name": "basic-sockets",
+  "version": "1.0.0",
+  "description": "Fundametos de sockets",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server/server",
+    "dev": "nodemon server/server"
+  },
+  "keywords": [
+    "node",
+    "server",
+    "express",
+    "sockets"
+  ],
+  "author": "Juan Martínez Osorio",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
