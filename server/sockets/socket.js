@@ -15,17 +15,20 @@ io.on('connection', (client) => {
 
 	// Escuchando el mensaje.
 	client.on('sendMessage', (data, callback) => {
-		// console.log(data);
 
-		if (data.user) {
-			callback({
-				resp: 'Todo salio bien',
-			});
-		} else {
-			callback({
-				resp: 'No se llego el user!!'
-			});
-		}
+		console.log(data);
+
+		client.broadcast.emit('sendMessage', data);
+
+		// if (data.user) {
+		// 	callback({
+		// 		resp: 'Todo salio bien',
+		// 	});
+		// } else {
+		// 	callback({
+		// 		resp: 'No se llego el user!!'
+		// 	});
+		// }
 
 	});
 });
