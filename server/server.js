@@ -21,6 +21,12 @@ let io = socketIO(server);
 io.on('connection', (client) => {
 	console.log('Usuario conectado!');
 
+	// Enviando información.
+	client.emit('sendMessage', {
+		user: 'Admin',
+		message: 'Bienvenido a esta aplicación!!'
+	});
+
 	client.on('disconnect', () => {
 		console.log('Usuario desconectado!');
 	});

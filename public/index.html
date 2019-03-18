@@ -21,9 +21,15 @@
 			console.log('Se perdio la conexion con el servidor');
 		});
 
+		// Enviar información.
 		socket.emit('sendMessage', {
 			user: 'Juan',
 			message: 'Hello there!!'
+		});
+
+		// Escuchar información.
+		socket.on('sendMessage', function(data) {
+			console.log(data);
 		});
 
 	</script>
