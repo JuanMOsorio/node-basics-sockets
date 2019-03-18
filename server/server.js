@@ -18,6 +18,14 @@ app.use(express.static(publicPath));
 // Cominicación del backend.
 let io = socketIO(server);
 
+io.on('connection', (client) => {
+	console.log('Usuario conectado!');
+
+	client.on('disconnect', () => {
+		console.log('Usuario desconectado!');
+	});
+});
+
 server.listen(port, (err) => {
 	if (err) throw new Error(err);
 	console.log(`Servidor corriendo en el puerto ${ port }`);
