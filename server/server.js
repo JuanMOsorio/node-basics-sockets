@@ -32,8 +32,19 @@ io.on('connection', (client) => {
 	});
 
 	// Escuchando el mensaje.
-	client.on('sendMessage', (data) => {
-		console.log(data);
+	client.on('sendMessage', (data, callback) => {
+		// console.log(data);
+
+		if (data.user) {
+			callback({
+				resp: 'Todo salio bien',
+			});
+		} else {
+			callback({
+				resp: 'No se llego el user!!'
+			});
+		}
+
 	});
 });
 

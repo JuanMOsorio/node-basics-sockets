@@ -25,6 +25,9 @@
 		socket.emit('sendMessage', {
 			user: 'Juan',
 			message: 'Hello there!!'
+		}, function(res) {
+			// Si todo sale bien.
+			console.log('Se disparo el callback', res);
 		});
 
 		// Escuchar información.
